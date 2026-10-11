@@ -30,7 +30,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 40px;
+  padding: 20px 148px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
@@ -39,8 +39,9 @@ button {
   align-items: center;
   gap: 10px;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #1a5f5a;
+  font-weight: bold;
 }
 
 .navbar-logo svg {
@@ -56,7 +57,7 @@ button {
 }
 
 .navbar-links a {
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   color: #444;
   font-weight: 500;
   transition: color 0.2s;
@@ -146,7 +147,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 60px;
+  padding: 50px 60px;
   color: #fff; /*changed the color cuz black is not looking good in contrast to background*/
 }
 
@@ -241,7 +242,7 @@ button {
   font-size: 1.9rem;
   font-weight: 800;
   color: #222;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 /* ===== CARDS GRID ===== */
@@ -277,23 +278,26 @@ button {
 }
 
 .service-card-body h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #222;
   margin-bottom: 8px;
   text-align: center;
+  align-items: start;
 }
 
 .service-card-body p {
-  font-size: 0.85rem;
-  color: #555;
+  font-size: 0.95rem;
+  color: grey;
   line-height: 1.55;
+  margin-bottom: 8px;
   text-align: center;
+  align-items: start;
 }
 
 .service-card-body p a,
 .service-card-body p span {
-  color: black;
+  color: grey;
 }
 
 /* ===== TESTIMONIALS ===== */
@@ -382,32 +386,32 @@ button {
 }
 
 .blog-card-body h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #222;
   margin-bottom: 8px;
 }
 
 .blog-card-body p {
-  font-size: 0.83rem;
-  color: #555;
+  font-size: 0.93rem;
+  color: grey;
   line-height: 1.5;
 }
 
 .blog-card-body p a,
 .blog-card-body p span {
-  color: #2a9d8f;
+  color: grey;
 }
 
 /* ===== FOOTER TOP ===== */
 .footer-top {
   background: #fff;
-  padding: 50px 40px 30px;
+  padding: 50px 90px 20px;
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: 30px;
-  border-top: 1px solid #e8e8e8;
-  max-width: 1200px;
+  border-top: 1px solid black; /* black solid line between section */
+  max-width: none; /* created max with none to keep the black solid line cover full screen */
   margin: 0 auto;
 }
 
@@ -459,18 +463,15 @@ button {
 }
 
 /* ===== FOOTER MIDDLE (contacts/socials) ===== */
-.footer-mid-wrapper {
-  border-top: 1px solid #eee;
-}
 
 .footer-mid {
   background: #fff;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid #fff;
   padding: 18px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -517,13 +518,13 @@ button {
 }
 
 .footer-contact-btn:hover {
-  border-color: #1a5f5a;
+  border-color: #1a5f5a; 
 }
 
 /* ===== FOOTER BOTTOM ===== */
 .footer-bottom {
   background: #fff;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid black;  /* creates a line between the section color and size can be changed */
   padding: 14px 40px;
   display: flex;
   align-items: center;

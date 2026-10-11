@@ -10,7 +10,7 @@ const SERVICES = [
     highlight: 'luxury & precious vehicles',
   },
   {
-    img: '/garden_cleaning.jpg',
+    img: '/services-garden-cleaning.jpg',
     title: 'Garden Cleaning',
     desc: 'Professional garden maintenance & deep cleaning services to keep your outdoor spaces beautiful.',
     highlight: 'Professional garden maintenance & deep cleaning services',
@@ -168,7 +168,7 @@ function TopServices() {
               <p>
                 {s.desc.split(s.highlight).map((part, idx, arr) =>
                   idx < arr.length - 1
-                    ? <span key={idx}>{part}<span style={{ color: '#2a9d8f' }}>{s.highlight}</span></span>
+                    ? <span key={idx}>{part}<span style={{ color: 'grey' }}>{s.highlight}</span></span>
                     : <span key={idx}>{part}</span>
                 )}
               </p>
