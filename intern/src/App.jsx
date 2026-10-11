@@ -25,24 +25,21 @@ const SERVICES = [
 
 const TESTIMONIALS = [
   {
-    initials: 'RT',
-    bg: '#4a90a4',
+    img: '/testimonial1.png', // img1 on happy stories section
     name: 'Rajesh Thapa',
     plain: '"Amazing service! ',
     highlight: 'The team is punctual, professional, and pays attention to every detail.',
     end: ' Highly recommend."',
   },
   {
-    initials: 'SS',
-    bg: '#6b8f71',
+    img: '/testimonial2.png', // img2 on happy stories section
     name: 'Sumnitra Shrestha',
     plain: '"',
     highlight: 'Our office has never been cleaner. Consistent, thorough, and friendly staff.',
     end: ' Very satisfied!"',
   },
   {
-    initials: 'VP',
-    bg: '#3a5a78',
+    img: '/testimonial3.png', // img3 on happy stories section
     name: 'Vikas Pandey',
     plain: '"Post-renovation cleanup was perfect. ',
     highlight: 'Efficient and detail-oriented team. Definitely recommend!',
@@ -152,7 +149,7 @@ function HighlightText({ plain, highlight, end }) {
   return (
     <span>
       {plain}
-      <span style={{ color: '#2a9d8f' }}>{highlight}</span>
+      <span style={{ color: 'grey' }}>{highlight}</span>
       {end}
     </span>
   );
@@ -187,12 +184,11 @@ function HappyStories() {
   return (
     <section className="testimonials-section">
       <h2 className="section-title">Happy Stories</h2>
-      <div className="cards-grid">
+      <div className="cards-grid"> 
         {TESTIMONIALS.map((t, i) => (
           <div className="testimonial-card" key={i}>
-            <div className="avatar-placeholder" style={{ background: t.bg }}>
-              {t.initials}
-            </div>
+             <img className= "testimonial-avatar" src={t.img} alt={t.name} />
+            
             <p className="testimonial-text">
               <HighlightText plain={t.plain} highlight={t.highlight} end={t.end} />
             </p>
