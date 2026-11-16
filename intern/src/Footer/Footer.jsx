@@ -1,12 +1,52 @@
 import { Link } from "react-router-dom";
+
+import {
+  IconBrandX,
+  IconBrandBlogger,
+  IconBrandYoutube,
+  IconBrandTrello,
+  IconBrandDiscord,
+  IconBrandViber,
+  IconBrandWhatsapp,
+  IconMailOpened,
+  IconPhoneCall,
+} from "@tabler/icons-react";
 import LogoIcon from "../Logo/LogoIcon";
-import './Footer.css';
+import "./Footer.css";
 
 const FOOTER_COLS = [
-  { heading: 'Browse More', links: ['Vision & Mission', 'History', 'Why Us', 'Timeline'] },
-  { heading: 'Resources', links: ['Gallery', 'QR', 'Glossary', 'Message'] },
-  { heading: 'Links', links: ['Calendar', 'FAQ', 'Testimonials', 'Video'] },
-  { heading: 'Explore', links: ['Refund Policy', 'Partnership', 'Blog', 'Team'] },
+  { heading: "Browse More", links: ["Vision & Mission", "History", "Why Us", "Timeline"] },
+  { heading: "Resources", links: ["Gallery", "QR", "Glossary", "Message"] },
+  { heading: "Links", links: ["Calendar", "FAQ", "Testimonials", "Video"] },
+  { heading: "Explore", links: ["Refund Policy", "Partnership", "Blog", "Team"] },
+];
+
+const SOCIALS = [
+  { name: "X", href: "https://x.com", Icon: IconBrandX },
+  { name: "Blogger", href: "https://yourblog.blogspot.com", Icon: IconBrandBlogger },
+  { name: "YouTube", href: "https://youtube.com/@yourchannel", Icon: IconBrandYoutube },
+  { name: "Trello", href: "https://trello.com/yourboard", Icon: IconBrandTrello },
+  { name: "Discord", href: "https://discord.gg/yourinvite", Icon: IconBrandDiscord },
+  { name: "Viber", href: "viber://chat?number=%2B9779852024365", Icon: IconBrandViber },
+];
+
+const CONTACTS = [
+  {
+    label: "cleaningsewa@sriyog.com",
+    href: "mailto:cleaningsewa@sriyog.com",
+    Icon: IconMailOpened,
+  },
+  {
+    label: "+977-98520 24365",
+    href: "tel:+9779852024365",
+    Icon: IconPhoneCall,
+  },
+  {
+    label: "+977 98520 24365",
+    href: "https://wa.me/9779852024365",
+    Icon: IconBrandWhatsapp,
+    external: true,
+  },
 ];
 
 function Footer() {
@@ -32,7 +72,7 @@ function Footer() {
           <div className="footer-col" key={col.heading}>
             <h4>{col.heading}</h4>
             <ul>
-              {col.links.map(link => (
+              {col.links.map((link) => (
                 <li key={link}><a href="#">{link}</a></li>
               ))}
             </ul>
@@ -42,24 +82,34 @@ function Footer() {
 
       <div className="footer-mid-wrapper">
         <div className="footer-mid">
-          <div className="footer-socials">
-            <a href="#" title="X">&#10005;</a>
-            <a href="#" title="Blog" style={{ fontWeight: 'bold', fontSize: '0.78rem' }}>B</a>
-            <a href="#" title="YouTube" style={{ fontSize: '0.8rem' }}>&#9654;</a>
-            <a href="#" title="LinkedIn" style={{ fontWeight: 'bold', fontSize: '0.78rem' }}>in</a>
-            <a href="#" title="Discord" style={{ fontSize: '0.75rem' }}>&#9670;</a>
-            <a href="#" title="Viber" style={{ fontSize: '0.8rem' }}>&#128222;</a>
-          </div>
+          <ul className="footer-socials">
+            {SOCIALS.map(({ name, href, Icon }) => (
+              <li key={name}>
+                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={name} title={name}>
+                  <Icon size={27} stroke={1.6} />
+                </a>
+              </li>
+            ))}
+          </ul>
+
           <div className="footer-contacts">
-            <button className="footer-contact-btn">&#9993; cleaningsewa@sriyog.com</button>
-            <button className="footer-contact-btn">&#128222; +977-98520 24365</button>
-            <button className="footer-contact-btn">&#128172; +977 98520 24365</button>
+            {CONTACTS.map(({ label, href, Icon, external }) => (
+              <a
+                key={label}
+                className="footer-contact-btn"
+                href={href}
+                {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+              >
+                <Icon size={21} stroke={1.7} />
+                {label}
+              </a>
+            ))}
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>All Rights Reserved. &#169; 2018-2026 Cleaning Sewa Built With : React </p>
+        <p>All Rights Reserved. &#169; 2018-2026 Cleaning Sewa Built With : React</p>
         <div className="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <span className="footer-divider">|</span>

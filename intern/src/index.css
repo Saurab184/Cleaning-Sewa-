@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+:root {
+  --page-gutter: clamp(20px, 10vw, 148px);
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: #fff;

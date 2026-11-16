@@ -77,15 +77,27 @@ const FOOTER_COLS = [
   { heading: 'Explore', links: ['Refund Policy', 'Partnership', 'Blog', 'Team'] },
 ];
 
-const PARTNER_NAMES = [
-  'IDA Products', 'Balwaan', 'Hardware Pasal', 'Miraclevents',
-  'Felco', 'Deep Jyoti Garden Tools', 'HiPerFect', 'Karcher', 'A Better Price',
+const PARTNERS = [
+  { name: 'STHIL', logo: '/images/Home/partners/p1.png' },
+  { name: 'Falcon Garden Tools', logo: '/images/Home/partners/p2.png' },
+  { name: 'Biocomp', logo: '/images/Home/partners/p3.png' },
+  { name: 'AGRIMATE', logo: '/images/Home/partners/p4.png' },
+  { name: 'Greaves', logo: '/images/Home/partners/p5.png' },
+  { name: 'Honda Power Products', logo: '/images/Home/partners/p6.png' },
+  { name: 'Balwaan', logo: '/images/Home/partners/p7.png' },
+  { name: 'Hardware Pasal', logo: '/images/Home/partners/p8.png' },
+  { name: 'Miraclevents', logo: '/images/Home/partners/p9.png' },
+  { name: 'Felco', logo: '/images/Home/partners/p10.png' },
+  { name: 'Deep Jyoti Garden Tools', logo: '/images/Home/partners/p11.png' },
+  { name: 'Hydroponics Nepal', logo: '/images/Home/partners/p12.png' },
+  { name: 'KARCHER', logo: '/images/Home/partners/p13.png' },
+  { name: 'A better price', logo: '/images/Home/partners/p14.png' },
 ];
 
 function Hero() {
   return (
     <section className="hero">
-      <img src="/hero_family.jpg" alt="Happy family in clean home" className="hero-img" />
+      <img src="/images/Home/Hero/hero_family.jpg" alt="Happy family in clean home" className="hero-img" />
       <div className="hero-overlay" />
       <div className="hero-content">
         <p>Welcome to</p>
@@ -100,13 +112,22 @@ function Hero() {
   );
 }
 
+
 function Partners() {
-  const doubled = [...PARTNER_NAMES, ...PARTNER_NAMES];
+  const looped = [...PARTNERS, ...PARTNERS]; // duplicated so the loop has no gap
+
   return (
-    <div className="partners-bar">
+    <div className="partners-bar" aria-label="Our partners">
       <div className="partners-track">
-        {doubled.map((name, i) => (
-          <span key={i} className="partner-name">{name}</span>
+        {looped.map(({ name, logo }, i) => (
+          <img
+            key={i}
+            src={logo}
+            alt={i < PARTNERS.length ? name : ''}
+            aria-hidden={i >= PARTNERS.length}
+            loading="lazy"
+            draggable="false"
+          />
         ))}
       </div>
     </div>
