@@ -1,0 +1,136 @@
+/* ===== SERVICES HERO ===== */
+/* Scoped with .services-hero so it works even if .about-hero differs */
+.services-hero {
+  background: #0f4741;
+  color: #fff;
+  text-align: center;
+  padding: 110px var(--page-gutter) 120px;
+}
+
+.services-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 15px;
+}
+
+.services-hero p {
+  max-width: 700px;
+  font-size: 1.11rem;
+  line-height: 1.5;
+}
+
+/* ===== SERVICES GRID ===== */
+.services-section {
+  background: #f9fafb;
+  padding: 60px var(--page-gutter) 80px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1540px;
+  margin: 0 auto;
+}
+
+/* ===== CARD ===== */
+.services-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+}
+
+.services-card img,
+.services-card-placeholder {
+  width: 100%;
+  aspect-ratio: 483 / 310;   /* = 310px tall at 483px wide, scales with the card */
+  object-fit: cover;
+  display: block;
+}
+
+.services-card-placeholder {
+  background: #e5e9ec;
+}
+
+.services-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  padding: 25px;
+}
+
+.services-card-body h3 {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.services-card-body p {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 10;
+  color: #4a5568;
+  margin-bottom: 17px;
+}
+
+.services-btn {
+  margin-top: auto;
+  padding: 8px 15px;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 500;
+  background: #0f4741;
+  color: #fff;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.services-btn:hover {
+  background: #166f69;
+}
+
+.services-btn:focus-visible {
+  outline: 3px solid #7fc8bd;
+  outline-offset: 2px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-hero {
+    padding-block: 70px 80px;
+  }
+  .services-section {
+    padding-block: 40px 60px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .services-card-body {
+    padding: 20px;
+  }
+  .services-card-body h3 {
+    font-size: 21px;
+    line-height: 30px;
+  }
+  .services-card-body p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+  .services-btn {
+    font-size: 17px;
+  }
+}

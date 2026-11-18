@@ -8,6 +8,7 @@ import FloatingButtons from './FloatingButtons/FloatingButtons';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Projects from './Pages/Projects';
+import Services from './Pages/Services';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/Projects" element={<Projects />} />
+        <Route path="/services" element={<Services />} />
       </Routes>
       <Footer />
       <FloatingButtons />
